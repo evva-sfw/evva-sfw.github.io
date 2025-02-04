@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" viewBox="-124 972.5 1103.067 236" width="1103.067" height="236">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#797979">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-9 -4 10 8" markerWidth="10" markerHeight="8" color="#797979">
+      <g>
+        <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_3" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#797979">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_4" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-9 -4 10 8" markerWidth="10" markerHeight="8" color="#797979">
+      <g>
+        <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="-234.3067" y="948.9">
+      <feOffset in="SourceAlpha" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="#919191" flood-opacity=".25" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+        <style type="text/css">
+      @font-face {
+        font-family: "Open Sans";
+        src: url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap');
+      }
+
+      svg { color-scheme: light dark; }
+      g path, g line { stroke: #929292; color-scheme: light;}
+      g text { fill: #929292; color-scheme: light;}
+      g tspan { fill: #929292; color-scheme: light;}
+
+      @media (prefers-color-scheme:light), :root[data-theme="light"] {
+        svg { color-scheme:light; }
+        g path { stroke: #929292; color-scheme: light;}
+        g text { fill: #929292; color-scheme: light;}
+        g tspan { fill: #929292; color-scheme: light;}
+      }
+      @media (prefers-color-scheme: dark), :root[data-theme="dark"] {
+        g path, g line { stroke: white; }
+        g text { fill: #929292; }
+        g tspan { fill: #929292; }
+      }
+    </style>
+  </defs>
+  <g id="Canvas_1" stroke-dasharray="none" stroke-opacity="1" fill="none" stroke="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_41">
+        <rect x="-123.5" y="1006" width="167.5" height="68.5" fill="white"/>
+        <rect x="-123.5" y="1006" width="167.5" height="68.5" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-118.5 1018.25)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="29.789062" y="17" xml:space="preserve">Identification </tspan>
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="47.76172" y="39" xml:space="preserve">Medium</tspan>
+        </text>
+      </g>
+      <g id="Graphic_42">
+        <rect x="-123.5" y="1109" width="167.5" height="68.5" fill="white"/>
+        <rect x="-123.5" y="1109" width="167.5" height="68.5" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(-118.5 1121.25)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="13.769531" y="17" xml:space="preserve">EVVA Component</tspan>
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="39.816406" y="39" xml:space="preserve">&lt;&lt;Xesar&gt;&gt;</tspan>
+        </text>
+      </g>
+      <g id="Graphic_43">
+        <rect x="136" y="994" width="158" height="194" fill="white"/>
+        <rect x="136" y="994" width="158" height="194" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(141 999)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="9.335938" y="17" xml:space="preserve">Mobile Application</tspan>
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="12.507812" y="39" xml:space="preserve">&lt;&lt;MobilePhone&gt;&gt;</tspan>
+        </text>
+      </g>
+      <g id="Line_44">
+        <line x1="60.9" y1="1045" x2="119.1" y2="1045" marker-end="url(#FilledArrow_Marker)" marker-start="url(#FilledArrow_Marker_2)" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_45">
+        <line x1="60.9" y1="1143" x2="119.1" y2="1143" marker-end="url(#FilledArrow_Marker)" marker-start="url(#FilledArrow_Marker_2)" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Graphic_46">
+        <text transform="translate(74 1019)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="0" y="17" xml:space="preserve">RFID</tspan>
+        </text>
+      </g>
+      <g id="Graphic_47">
+        <text transform="translate(74 1116)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="0" y="17" xml:space="preserve">BLE</tspan>
+        </text>
+      </g>
+      <g id="Graphic_50">
+        <path d="M 450.9219 1073.3082 C 455.0719 1072.3848 459.53814 1071.8823 464.1911 1071.8823 C 468.7521 1071.8823 473.13335 1072.3651 477.21435 1073.254 M 400.3111 1084.7645 C 398.4395 1084.5329 396.5051 1084.4117 394.52575 1084.4117 C 378.03643 1084.4117 364.66917 1092.8261 364.66917 1103.2059 C 364.66917 1113.5856 378.03643 1122 394.52575 1122 L 464.1911 1122 C 486.1768 1122 504 1110.7807 504 1096.941 C 504 1085.9724 492.80477 1076.6498 477.21435 1073.254 M 400.3111 1084.7645 C 398.7151 1082.0527 397.84315 1079.12 397.84315 1076.0588 C 397.84315 1062.2192 415.6662 1051 437.65205 1051 C 458.1316 1051 474.999 1060.7346 477.21435 1073.254 M 400.3111 1084.7645 C 404.24324 1085.2504 407.8985 1086.2222 411.1128 1087.5765" fill="white"/>
+        <path d="M 450.9219 1073.3082 C 455.0719 1072.3848 459.53814 1071.8823 464.1911 1071.8823 C 468.7521 1071.8823 473.13335 1072.3651 477.21435 1073.254 M 400.3111 1084.7645 C 398.4395 1084.5329 396.5051 1084.4117 394.52575 1084.4117 C 378.03643 1084.4117 364.66917 1092.8261 364.66917 1103.2059 C 364.66917 1113.5856 378.03643 1122 394.52575 1122 L 464.1911 1122 C 486.1768 1122 504 1110.7807 504 1096.941 C 504 1085.9724 492.80477 1076.6498 477.21435 1073.254 M 400.3111 1084.7645 C 398.7151 1082.0527 397.84315 1079.12 397.84315 1076.0588 C 397.84315 1062.2192 415.6662 1051 437.65205 1051 C 458.1316 1051 474.999 1060.7346 477.21435 1073.254 M 400.3111 1084.7645 C 404.24324 1085.2504 407.8985 1086.2222 411.1128 1087.5765" stroke="#1c274c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      </g>
+      <g id="Graphic_51">
+        <text transform="translate(406.1367 1072)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="10.871094" y="17" xml:space="preserve">Mobile</tspan>
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="0" y="39" xml:space="preserve">WAN/LAN</tspan>
+        </text>
+      </g>
+      <g id="Graphic_52">
+        <rect x="591" y="973" width="167.56701" height="88" fill="white"/>
+        <rect x="591" y="973" width="167.56701" height="88" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(596 978)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="123.38733" y="17" xml:space="preserve">Your</tspan>
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="70.23108" y="39" xml:space="preserve">Middleware</tspan>
+        </text>
+      </g>
+      <g id="Graphic_53">
+        <rect x="591" y="1120" width="167.56701" height="88" fill="white"/>
+        <rect x="591" y="1120" width="167.56701" height="88" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(596 1125)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="59.12952" y="17" xml:space="preserve">MQTT Broker</tspan>
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="75.54358" y="39" xml:space="preserve">&lt;&lt;Xesar &gt;&gt;</tspan>
+        </text>
+      </g>
+      <g id="Line_56">
+        <line x1="674.7835" y1="1110.1" x2="674.7835" y2="1070.9" marker-end="url(#FilledArrow_Marker_3)" marker-start="url(#FilledArrow_Marker_4)" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_57">
+        <line x1="303.8438" y1="1092.0535" x2="355.70563" y2="1097.604" marker-end="url(#FilledArrow_Marker_3)" marker-start="url(#FilledArrow_Marker_4)" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_58">
+        <line x1="484.07084" y1="1062.0256" x2="581.8759" y2="1020.842" marker-end="url(#FilledArrow_Marker_3)" marker-start="url(#FilledArrow_Marker_4)" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_59">
+        <line x1="499.91595" y1="1119.8894" x2="582.16734" y2="1161.5285" marker-end="url(#FilledArrow_Marker_3)" marker-start="url(#FilledArrow_Marker_4)" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Group_60">
+        <title>Component</title>
+        <g id="Graphic_63" filter="url(#Shadow)">
+          <rect x="158" y="1131" width="75" height="45" fill="white"/>
+          <rect x="158" y="1131" width="75" height="45" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(164 1135.5)" fill="#ff2600">
+            <tspan font-family="Open Sans" font-size="13" fill="#ff2600" x="10.787598" y="14" xml:space="preserve">Mobile</tspan>
+            <tspan font-family="Open Sans" font-size="13" fill="#ff2600" x="19.20459" y="32" xml:space="preserve">SDK</tspan>
+          </text>
+        </g>
+        <g id="Graphic_62">
+          <rect x="146.46154" y="1139.6538" width="20.192308" height="8.653846" fill="white"/>
+          <rect x="146.46154" y="1139.6538" width="20.192308" height="8.653846" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_61">
+          <rect x="146.46154" y="1156.9615" width="20.192308" height="8.653846" fill="white"/>
+          <rect x="146.46154" y="1156.9615" width="20.192308" height="8.653846" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Graphic_64">
+        <rect x="811" y="973" width="167.56701" height="88" fill="white"/>
+        <rect x="811" y="973" width="167.56701" height="88" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(816 978)" fill="#797979">
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="123.38733" y="17" xml:space="preserve">Your</tspan>
+          <tspan font-family="Open Sans" font-size="16" fill="#797979" x="94.00452" y="39" xml:space="preserve">Backend</tspan>
+        </text>
+      </g>
+      <g id="Line_65">
+        <line x1="768.467" y1="1017" x2="801.1" y2="1017" marker-end="url(#FilledArrow_Marker_3)" marker-start="url(#FilledArrow_Marker_4)" stroke="#797979" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

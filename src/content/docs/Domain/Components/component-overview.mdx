@@ -1,0 +1,46 @@
+---
+title: Component Overview
+description: Overview of components
+template: doc
+sidebar:
+    order: 1
+badge:
+    text: Start
+    variant: tip
+---
+
+import { Icon } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import cylinder from '../../../../assets/components/cylinder.svg';
+import escutcheon from '../../../../assets/components/escutcheon.svg';
+import handle from '../../../../assets/components/handle.svg';
+import onlineWallreader from '../../../../assets/components/online-wallreader.svg';
+import wallreader from '../../../../assets/components/wallreader.svg';
+import evvaComponent from '../../../../assets/components/evva-component-building-block.svg';
+
+EVVA mechatronical components can be installed at an [Installation Point](/domain/objects/installation-point/) to enable access control.
+[People](/domain/objects/people) that require access are authenticated and authorized using an [Identification Medium](/domain/objects/identification-medium) or a [Mobile Identification Medium](/domain/objects/mobile-identification-medium).
+
+The access control decision is taken offline in the component.
+Components can be provisioned with configuration from an access control management backend, using a serial or wireless connection from a programming device.
+
+## Building Block View
+<Image src={evvaComponent} alt="EVVAComponent package view with interfaces." format="svg" loading="lazy" width="400"/>
+
+### Interfaces
+
+| Interface |  Description |
+| ----------- | ----------- | 
+| UART (Single Wire) | Serial interface for a connector that can be attached to the component. |
+| RFID | Low range wireless interface (RFID) for interacting with an [Identification Medium](/domain/objects/identification-medium) |
+| BLE | Bluetooth Low Energy interface for wireless interaction with the component. |
+
+## Component types
+
+| Type | Symbolic visualization | Technical shortname | Composite component | Battery powered|
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| [Cylinder](/domain/components/types/cylinder/) | <Image src={cylinder} alt="Cylinder symbol." format="svg" loading="lazy" width="45" height="45" /> | `ezy` | <Icon name="approve-check" />  | <Icon name="approve-check" /> |
+| [Handle](/domain/components/types/handle/) | <Image src={handle} alt="Handle symbol." format="svg" loading="lazy" width="45" height="45" /> | `edr` |  <Icon name="close" /> |  <Icon name="approve-check" /> |
+| [Escutcheon](/domain/components/types/escutcheon/)) | <Image src={escutcheon} alt="Escutcheon symbol." format="svg" loading="lazy" width="45" height="45" /> | `ebs` | <Icon name="close" /> |  <Icon name="approve-check" /> |
+| [Wallreader](/domain/components/types/wallreader/) | <Image src={wallreader} alt="Wallreader symbol." format="svg" loading="lazy" width="45" height="45" /> | `ewl` + `ecu`| <Icon name="approve-check" /> | <Icon name="close" />|
+| [Online Wallreader](/domain/components/types/online-wallreader/) | <Image src={onlineWallreader} alt="Online wallreader symbol." format="svg" loading="lazy" width="45" height="45" /> | `ewl` + `eou` | <Icon name="approve-check" /> |  <Icon name="close" /> |

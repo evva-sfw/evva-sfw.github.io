@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" viewBox="-65 530.5 662.5 320" width="662.5" height="320">
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="-131.25" y="498.5">
+      <feOffset in="SourceAlpha" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="#919191" flood-opacity=".25" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledDiamond_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 4 -3 L 0 0 L 4 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <style type="text/css">
+     @font-face {
+        font-family: "Open Sans";
+        src: url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap');
+      }
+
+      svg { color-scheme: light dark; }
+      g path, g line { stroke: #929292; color-scheme: light;}
+      g text { fill: #929292; color-scheme: light;}
+      g tspan { fill: #929292; color-scheme: light;}
+
+      @media (prefers-color-scheme:light), :root[data-theme="light"] {
+        svg { color-scheme:light; }
+        g path { stroke: #929292; color-scheme: light;}
+        g text { fill: #929292; color-scheme: light;}
+        g tspan { fill: #929292; color-scheme: light;}
+      }
+      @media (prefers-color-scheme: dark), :root[data-theme="dark"] {
+        g path, g line { stroke: white; }
+        g text { fill: #929292; }
+        g tspan { fill: #929292; }
+      }
+    </style>
+  </defs>
+  <g id="Canvas_1" stroke-dasharray="none" stroke-opacity="1" fill="none" stroke="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_115">
+        <path d="M 177 531 L 597 531 L 597 850 L 177 850 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Group_86">
+        <title>Package</title>
+        <g id="Graphic_88" filter="url(#Shadow)">
+          <rect x="-64" y="655" width="130" height="78" fill="white"/>
+          <rect x="-64" y="655" width="130" height="78" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(-58 685)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="20.6955" y="13" xml:space="preserve">Abrevva SDK</tspan>
+          </text>
+        </g>
+        <g id="Graphic_87">
+          <rect x="-64" y="645" width="40" height="10" fill="white"/>
+          <rect x="-64" y="645" width="40" height="10" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Group_89">
+        <title>Component</title>
+        <g id="Graphic_92" filter="url(#Shadow)">
+          <rect x="434" y="547" width="130" height="78" fill="white"/>
+          <rect x="434" y="547" width="130" height="78" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(440 577)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="20.5915" y="13" xml:space="preserve">Xesar Mobile</tspan>
+          </text>
+        </g>
+        <g id="Graphic_91">
+          <rect x="414" y="562" width="35" height="15" fill="white"/>
+          <rect x="414" y="562" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_90">
+          <rect x="414" y="592" width="35" height="15" fill="white"/>
+          <rect x="414" y="592" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Group_93">
+        <title>Component</title>
+        <g id="Graphic_96" filter="url(#Shadow)">
+          <rect x="234" y="650" width="130" height="78" fill="white"/>
+          <rect x="234" y="650" width="130" height="78" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(240 680)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="50.1295" y="13" xml:space="preserve">BLE</tspan>
+          </text>
+        </g>
+        <g id="Graphic_95">
+          <rect x="214" y="665" width="35" height="15" fill="white"/>
+          <rect x="214" y="665" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_94">
+          <rect x="214" y="695" width="35" height="15" fill="white"/>
+          <rect x="214" y="695" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Group_97">
+        <title>Component</title>
+        <g id="Graphic_100" filter="url(#Shadow)">
+          <rect x="234" y="753" width="130" height="78" fill="white"/>
+          <rect x="234" y="753" width="130" height="78" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(240 783)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="12.4015" y="13" xml:space="preserve">Crypto Libraries</tspan>
+          </text>
+        </g>
+        <g id="Graphic_99">
+          <rect x="214" y="768" width="35" height="15" fill="white"/>
+          <rect x="214" y="768" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_98">
+          <rect x="214" y="798" width="35" height="15" fill="white"/>
+          <rect x="214" y="798" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Group_101">
+        <title>Component</title>
+        <g id="Graphic_104" filter="url(#Shadow)">
+          <rect x="234" y="547" width="130" height="78" fill="white"/>
+          <rect x="234" y="547" width="130" height="78" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(240 577)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="27.7405" y="13" xml:space="preserve">MQTT Client</tspan>
+          </text>
+        </g>
+        <g id="Graphic_103">
+          <rect x="214" y="562" width="35" height="15" fill="white"/>
+          <rect x="214" y="562" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_102">
+          <rect x="214" y="592" width="35" height="15" fill="white"/>
+          <rect x="214" y="592" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Group_105">
+        <title>Component</title>
+        <g id="Graphic_108" filter="url(#Shadow)">
+          <rect x="434" y="650" width="130" height="78" fill="white"/>
+          <rect x="434" y="650" width="130" height="78" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <text transform="translate(440 680)" fill="#515556">
+            <tspan font-family="Avenir" font-size="13" fill="#515556" x="44.908" y="13" xml:space="preserve">RFID</tspan>
+          </text>
+        </g>
+        <g id="Graphic_107">
+          <rect x="414" y="665" width="35" height="15" fill="white"/>
+          <rect x="414" y="665" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+        <g id="Graphic_106">
+          <rect x="414" y="695" width="35" height="15" fill="white"/>
+          <rect x="414" y="695" width="35" height="15" stroke="#b9c0c1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        </g>
+      </g>
+      <g id="Line_111">
+        <line x1="177" y1="689.5187" x2="75.2499" y2="689.0432" marker-end="url(#FilledDiamond_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

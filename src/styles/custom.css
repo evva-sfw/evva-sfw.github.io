@@ -1,0 +1,30 @@
+:root {
+  --sl-content-width: 70rem;
+  --sl-text-5xl: 3.5rem;
+}
+
+:root[data-theme="light"] {
+  --evva-th-1-bg-color: #d5d5d5;
+  --evva-th-2-bg-color: #e5e5e5;
+}
+
+:root[data-theme="dark"] {
+  --evva-th-1-bg-color: #575757;
+  --evva-th-2-bg-color: #d5d5d5;
+  --evva-th-1-color: #ffffff;
+  --evva-th-2-color: #000000;
+}
+
+main {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.evva-th-1 {
+  background-color: var(--evva-th-1-bg-color);
+  color: var(--evva-th-1-color) !important;
+}
+
+.evva-th-2 {
+  background-color: var(--evva-th-2-bg-color);
+  color: var(--evva-th-2-color) !important;
+}

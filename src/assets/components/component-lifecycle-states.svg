@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" viewBox="69 308.13537 492.15234 142.86463" width="492.15234" height="142.86463">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 0 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <style type="text/css">
+      @font-face {
+        font-family: "Open Sans";
+        src: url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap');
+      }
+
+      svg { color-scheme: light dark; }
+         g path { stroke: #929292; color-scheme: light;}
+        g text { fill: #929292; color-scheme: light;}
+        g tspan { fill: #929292; color-scheme: light;}
+
+      @media (prefers-color-scheme:light), :root[data-theme="light"] {
+        svg { color-scheme:light; }
+        path { stroke: #929292; color-scheme: light;}
+        text { fill: #929292; color-scheme: light;}
+        tspan { fill: #929292; color-scheme: light;}
+      }
+      @media (prefers-color-scheme: dark), :root[data-theme="dark"] {
+        g path { stroke: white; }
+        g text { fill: #929292; }
+        g tspan { fill: #929292; }
+      }
+    </style>
+  </defs>
+  <g id="Canvas_1" stroke-dasharray="none" stroke-opacity="1" fill="none" stroke="none" fill-opacity="1">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_57">
+        <title>State</title>
+        <path d="M 398.52285 361 L 531.6295 361 C 547.3741 361 560.15234 369.96 560.15234 381 C 560.15234 392.04 547.3741 401 531.6295 401 L 398.52285 401 C 382.77824 401 370 392.04 370 381 C 370 369.96 382.77824 361 398.52285 361 Z" fill="white"/>
+        <path d="M 398.52285 361 L 531.6295 361 C 547.3741 361 560.15234 369.96 560.15234 381 C 560.15234 392.04 547.3741 401 531.6295 401 L 398.52285 401 C 382.77824 401 370 392.04 370 381 C 370 369.96 382.77824 361 398.52285 361 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(395.01523 372)" fill="black">
+          <tspan font-family="Open Sans" font-weight="bold" font-size="13" fill="black" x="12.868553" y="14" xml:space="preserve">Installation Mode</tspan>
+        </text>
+      </g>
+      <g id="Graphic_55">
+        <title>State</title>
+        <path d="M 98.52285 361 L 231.6295 361 C 247.3741 361 260.15234 369.96 260.15234 381 C 260.15234 392.04 247.3741 401 231.6295 401 L 98.52285 401 C 82.77824 401 70 392.04 70 381 C 70 369.96 82.77824 361 98.52285 361 Z" fill="white"/>
+        <path d="M 98.52285 361 L 231.6295 361 C 247.3741 361 260.15234 369.96 260.15234 381 C 260.15234 392.04 247.3741 401 231.6295 401 L 98.52285 401 C 82.77824 401 70 392.04 70 381 C 70 369.96 82.77824 361 98.52285 361 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <text transform="translate(95.01523 372)" fill="black">
+          <tspan font-family="Open Sans" font-weight="bold" font-size="13" fill="black" x="8.107811" y="14" xml:space="preserve">Construction Mode</tspan>
+        </text>
+      </g>
+      <g id="Line_67">
+        <path d="M 198.03645 361 L 198 331 L 308.84385 331.13805 L 437 331 L 437.6354 351.10494" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_68">
+        <path d="M 437.94815 401 L 437 431.7422 L 198 430 L 198.0403 410.9" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Graphic_78">
+        <text transform="translate(271.10655 313.13537)" fill="black">
+          <tspan font-family="Open Sans" font-weight="bold" font-size="10" fill="black" x="0" y="11" xml:space="preserve">Add Component</tspan>
+        </text>
+      </g>
+      <g id="Graphic_80">
+        <text transform="translate(267 432)" fill="black">
+          <tspan font-family="Open Sans" font-weight="bold" font-size="10" fill="black" x="0" y="11" xml:space="preserve">Remove Component</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

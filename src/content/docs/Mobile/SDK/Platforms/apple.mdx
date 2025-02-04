@@ -1,0 +1,54 @@
+---
+title: Apple mobile devices
+description: Libraries for mobile application development on apple devices
+template: doc
+sidebar:
+    order: 4
+---
+
+We provide a native development library in binary form for Apple mobile devices under EVVA License (currently closed source).
+
+[Github Repository](https://github.com/evva-sfw/abrevva-sdk-ios)
+
+The dependency can be acquired directly from CocoaPods:
+[Abrevva SDK @ CocoaPods](https://cocoapods.org/pods/AbrevvaSDK)
+
+## Notes for your mobile application 
+
+### Capabilities that may be required
+
+- NFC Tag Reading
+
+### App Entitlements that may be required
+
+- related to NFC Tag Reading
+```
+<key>com.apple.developer.nfc.readersession.formats</key><array><string>TAG</string></array>
+```
+### PLIST Entries that may be required
+
+- related to NFC Tag Reading 
+  ```
+  <key>NFCReaderUsageDescription</key>
+  <string>Uses NFC to run maintenance on peripheral NFC devices.</string>
+  ```
+- related to BLE usage
+  ```
+  <key>NSBluetoothAlwaysUsageDescription</key>
+  <string>Uses Bluetooth to connect and interact with peripheral BLE devices.</string>
+  ```
+
+## Compliance
+
+### Dependencies
+
+- [Core Bluetooth](https://developer.apple.com/documentation/corebluetooth/)
+- [Core NFC](https://developer.apple.com/documentation/corenfc)
+- [CryptoKit](https://developer.apple.com/documentation/cryptokit/)
+- [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift)
+- [CocoaMQTT](https://github.com/emqx/CocoaMQTT)
+
+### Use of cryptography
+
+- Communication with Services uses standard TLS encryption based on what the OS provides
+- Communication with EVVA Components uses AES-CCM-256 encryption from CryptoSwift

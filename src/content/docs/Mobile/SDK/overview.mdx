@@ -1,0 +1,76 @@
+---
+title: Overview
+description: Overview of Mobile SDK
+template: doc
+sidebar:
+    order: 1
+---
+
+import { Image } from 'astro:assets';
+import distributionView from '../../../../assets/mobile-disengage-distribution.svg';
+
+The SDK for mobile devices was designed to allow developers to integrate with
+[EVVA components](/domain/components/component-overview/) from the Xesar mechatronical System into their own mobile applications.
+
+The typical use case for this is when you want to use your own mobile application for some form of access.
+
+# Understand the system
+
+It is important to understand that the Mobile SDK is only a small part of the system that is required to make such an integration work.
+The following diagram pictures a distribution overview and highlights the Mobile SDK in red.
+
+<Image src={distributionView} alt="Distribution view." format="svg" loading="lazy" width="800"/>
+
+You will also need:
+* a working [Xesar Software](/xesarsoftware/overview/)) installation
+* with it's provisioned [EVVA Components](/domain/components/component-overview/)
+* as well as a [Middleware](/mobile/middleware-notes/) that will be the handler between your own mobile application, the working Xesar Installation and your own backend, which
+may for example be an ERP or a booking system.
+
+# Understand the Mobile SDK
+
+Mobile Disengage with [EVVA components](/domain/components/component-overview/) (Xesar system) works over Bluetooth Low Energy and uses
+1. the continuous [BLE Advertisement of EVVA components](/mobile/specifications/ble-advertisement/)
+1. the GATT standard based [Mobile Identification Medium Service](/mobile/specifications/ble-mobile-identification-medium/)
+to provide authentication and authorization capabilities  equivalent to the standard [Identification Medium](/domain/objects/identification-medium/) in a Xesar.
+
+## Functionality covered by the SDK
+
+- Scan for EVVA devices (see [BLE Advertisement of EVVA components](/mobile/specifications/ble-advertisement/))
+- Lokalise Component
+- Disengage
+    - Temporary
+    - Office Mode
+
+### Maintenance (on the roadmap, not available yet)
+- Bridge for communication BLE to MQTT for Maintenance/Provisioning of components
+- Bridge for communication from RFID to MQTT to allow updates for RFID media
+
+## Responsibilities of the SDK
+
+The implementation in the SDK handles the BLE communication and the full [disengage sequence flow](/mobile/specifications/ble-mobile-disengage/) with the [EVVA Component](/domain/components/component-overview/).
+This includes the required cryptographical operations.
+
+The responsibility will be gradually be extended with support for features around provisioning and the handling of an [Identification Medium](/domain/objects/identification-medium/)).
+Therefore, the SDK already includes basic support for RFID as well as an MQTT client.
+
+## Responsibilities of your mobile application
+
+1. push notifications 
+1. security for the application bootstrap and data storage (e.g. 2FA, keystore)
+1. communication with your own [Middleware](/mobile/middleware-notes/) and/or backend.
+
+## Supported Mobile Platforms
+- iOS (>=15)
+- Android (>= Android 10 &  >= API Level 29)
+
+## Supported forms of application development
+
+- Support for [native mobile application development with libraries](/mobile/sdk/native-libraries)
+    - [Apple](/mobile/sdk/platforms/apple/)
+    - [Android](/mobile/sdk/platforms/android/)
+- Support for cross-platform mobile application development
+    - [React Native](/mobile/sdk/multiplatform/react-native)
+    - [Flutter Plugin](/mobile/sdk/multiplatform/flutter)
+    - [Capacitor Plugin](/mobile/sdk/multiplatform/capacitor)
+

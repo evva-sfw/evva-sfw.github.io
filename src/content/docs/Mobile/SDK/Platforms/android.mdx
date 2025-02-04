@@ -1,0 +1,84 @@
+---
+title: Android Mobile Devices
+description: Libraries for native integration with mobile disengage
+template: doc
+sidebar:
+    order: 5
+---
+
+We provide a native development library in binary form for Android mobile devices under EVVA License (currently closed source).
+
+[GitHub repository](https://github.com/evva-sfw/abrevva-sdk-android)
+
+The dependency can be acquired directly as Maven dependency `com.evva.xesar:abrevva-sdk-android`:
+[Abrevva SDK @ Maven Central](https://central.sonatype.com/artifact/com.evva.xesar/abrevva-sdk-android)
+
+```
+<dependency>
+  <groupId>com.evva.xesar</groupId>
+  <artifactId>abrevva-sdk-android</artifactId>
+  <version>${abrevva-sdk-version}</version>
+</dependency>
+```
+
+## Notes for your mobile application 
+
+### Features that may be required
+
+- BLE related
+  ```
+  <uses-feature
+    android:name="android.hardware.bluetooth_le"
+    android:required="true" />
+  ```
+
+### Permissions that may be required
+
+- BLE related
+  ```
+  <uses-permission android:name="android.permission.NFC" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission
+    android:maxSdkVersion="30"
+    android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission
+    android:maxSdkVersion="30"
+    android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission
+    android:maxSdkVersion="30"
+    android:name="android.permission.BLUETOOTH" />
+  <uses-permission
+    android:maxSdkVersion="30"
+    android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission
+    android:name="android.permission.BLUETOOTH_SCAN"
+    android:usesPermissionFlags="neverForLocation"
+    tools:targetApi="s" />
+  ```
+- NFC related
+  ```
+   <uses-permission
+    android:maxSdkVersion="30"
+    android:name="android.permission.NFC" />
+  ```
+
+## Compliance
+
+### Dependencies
+
+- [Nordic Kotlin BLE Library](https://github.com/NordicSemiconductor/Kotlin-BLE-Library)]
+  - Scanner `no.nordicsemi.android.kotlin.ble:scanner`
+  - Client `no.nordicsemi.android.kotlin.ble:client`
+- [Bouncycastle For Java](https://www.bouncycastle.org/download/bouncy-castle-java/) 
+  - Provider `org.bouncycastle:bcprov-jdk15to18`
+- [secure-random](https://github.com/KotlinCrypto/secure-random) 
+  - `org.kotlincrypto:secure-random`
+- [kotlinx-serialization](https://github.com/Kotlin/kotlinx.serialization)
+    - JSON `org.jetbrains.kotlinx:kotlinx-serialization-json`
+- [HiveMQ MQTT Client](https://github.com/hivemq/hivemq-mqtt-client)
+  - `com.hivemq:hivemq-mqtt-client`
+
+### Use of cryptography
+
+- Communication with Services uses standard TLS encryption based on what the OS provides
+- Communication with EVVA Components uses AES-CCM-256 encryption based on the Bouncycastle implementation

@@ -1,0 +1,102 @@
+---
+title: BLE Mobile Disengage Sequence
+description: BLE Service Specification for the mobile identification medium
+template: doc
+sidebar:
+    order: 1
+---
+
+import { Image } from 'astro:assets';
+import sequence from '../../../../assets/mobile-disengage-sequence.svg';
+
+The implementation that transmits the mobile identification medium uses a design with a replay protection mechanism that has a patent pending.
+See [EP3739554A1](https://patents.google.com/patent/EP3739554A1/en)
+
+## Interfaces
+
+| Interface| Annotations | 
+|------|------|
+| [BLE Advertisement](/mobile/specifications/ble-advertisement/) | See documentation of the EVVA component manufacturer specific advertisement. |
+| [Mobile Identification Medium Service](/mobile/specifications/ble-mobile-identification-medium-service/) | See GATT service description |
+
+## Interaction flow
+<Image src={sequence} alt="Sequence diagram of disengage with mobile identification medium." format="svg" loading="lazy" width="800"/>
+
+
+<table>
+  <tr>
+    <th>Step</th>
+    <th> Description</th>
+    <th>Characteristic</th>
+    <th>Operation</th>
+    <th>Annotations</th>
+  </tr>
+  <tr>
+    <th>1</th>
+    <td>Discover an EVVA component via  BLE Advertisement of EVVA Components and connect</td>
+    <td>N.A.</td>
+    <td>N.A.</td>
+    <td>
+      <ul>
+        <li>Component unique identifier (6 bytes) is contained in advertisement</li>
+        <li>Battery indication is contained in the advertisement</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th>2</th>
+    <td>Read mobile groups</td>
+    <td>MobileGroups</td>
+    <td>Read</td>
+    <td>
+      If the component does not return any mobile group, the connection SHOULD be closed.
+    </td>
+  </tr>
+  <tr>
+    <th>3</th>
+    <td>Subscription of the access status</td>
+    <td>AccessStatus</td>
+    <td>Subscribe</td>
+    <td>
+      Will be notified on change
+    </td>
+  </tr>
+   <tr>
+    <th>4</th>
+    <td>Read challenge</td>
+    <td>Challenge</td>
+    <td>Read</td>
+    <td>
+      <ul>
+        <li>Challenge is valid for the transaction within the current connection</li>
+        <li>Challenge mechanism enables Over-The-Air Replay-Attack Prevention</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th>5</th>
+    <td>Read the matching access rights from the persistent memory on the mobile phone</td>
+    <td>N.A.</td>
+    <td>N.A.</td>
+    <td>
+      <ul>
+        <li>Access Rights are pre-encrypted by the backend and cannot be read or manipulated on the mobile device.</li>
+        <li>Matching can be achieved using the component unique identifier (6 bytes). This requires meta-data that is handled/added by the backend.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th>6</th>
+    <td>Transmit the access rights packaged and encrypted (AEAD) using the current challenge (see Step 4).</td>
+    <td>MobileAccessData</td>
+    <td>WriteWithoutResponse</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>7</th>
+    <td>Receive access status notification from the component (see Step 2) and close connection.</td>
+    <td>AccessStatus</td>
+    <td>Notify</td>
+    <td>Status values are specified in [Mobile Identification Medium Service](/mobile/specifications/ble-mobile-identification-medium-service/)</td>
+  </tr>  
+</table>

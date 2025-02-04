@@ -1,0 +1,229 @@
+---
+title: BLE Advertisement of EVVA components
+description: BLE Advertisement Specification for EVVA components
+template: doc
+sidebar:
+  order: 2
+---
+
+[EVVA Components](/domain/components/component-overview/) use a BLE manufacturer advertisement with a registered 
+manufacturer identifier. It follows the Core Specification 5.4, Vol 3, Part C, Section 11, Figure 11.1: ADVERTISING AND SCAN RESPONSE DATA FORMAT (Core_v5.4_ADV.pdf).
+
+<table>
+  <tr>
+    <th class="evva-th-1">Key</th>
+    <th class="evva-th-1">Datatype</th>
+    <th class="evva-th-1">Length(Bytes)</th>
+    <th class="evva-th-1" width="20%">Values</th>
+    <th class="evva-th-1">Description</th>
+  </tr>
+  <tr>
+    <th class="evva-th-2" colspan="5">BLE Advertisement Header (Manufacturer Data)</th>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Length</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td width="20%"><ul><li>17|0x11 (b, d, m)</li><li>21|0x15 (z)</li><li>27|0x1B (w, i)</li></ul></td>
+    <td>Documentation states that the maximum advertising data length that can fit in a 4.x PDU is 31 bytes, 29 bytes maximum user payload</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Advertisement Data Type</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td width="20%">0xFF</td>
+    <td>«Manufacturer Specific Data», Bluetooth Core Specification:Vol. 3, Part C, section 8.1.1 (v2.1 + EDR, 3.0 + HS and 4.0)Vol. 3, Part C, sections 11.1.1 and 18.2 (v4.0)Core Specification Supplement, Part A, section 1.1</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Manufacturer Identifier</th>
+    <td>Word</td>
+    <td>2</td>
+    <td width="20%">[2153] | [0x0869]</td>
+    <td>EVVA Company Identifier, [see assigned numbers for Registration](https://www.bluetooth.com/specifications/assigned-numbers/company-identifiers/)</td>
+  </tr>
+  <tr>
+    <th class="evva-th-2" colspan="5">BLE Advertisment Payload (Manufacturer Data)</th>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Manufacturer Data Version</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td>1</td>
+    <td>Version of our manufacturer specific data</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Component Type</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td>z,b,d,w,m,i</td>
+    <td>Component hardware type</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Firmware Major</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td>e.g. 0</td>
+    <td rowspan="3">
+      <ul>
+        <li>Major, Minor, Patch FW Version of the component</li>
+        <li>[Wallreader](/domain/components/types/wallreader/) and [Online Wallreader](/domain/components/types/online-wallreader/): Version of the reader unit</li>
+        <li>[Cylinder](/domain/components/types/cylinder/) : Version of head</li>
+      </ul>
+    </td>
+  </tr>
+ <tr>
+    <th class="evva-th-1">Firmware Minor</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td>e.g. 0</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Firmware Patch</th>
+    <td>Word</td>
+    <td>2</td>
+    <td>e.g. 654</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">Device Information</th>
+    <td>Word</td>
+    <td>2</td>
+    <td></td>
+    <td>See device information below</td>
+  </tr>
+   <tr>
+    <th class="evva-th-1">Identifier</th>
+    <td>Array</td>
+    <td>6</td>
+    <td>e.g. 0x001122334455</td>
+    <td>Unique identifier of the device</td>
+  </tr>
+   <tr>
+    <th class="evva-th-2" colspan="5">Optional additional data</th>
+  </tr>
+ <tr>
+    <th class="evva-th-1">Subcomponent Major (z, w, i)</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td>e.g. 0</td>
+    <td rowspan="3">
+      <ul>
+        <li>Major, Minor, Patch FW Version of subcomponent</li>
+        <li>[Wallreader](/domain/components/types/wallreader/) and [Online Wallreader](/domain/components/types/online-wallreader/): Version of connected control unit</li>
+        <li>[Cylinder](/domain/components/types/cylinder/) : Version of module</li>
+      </ul>
+    </td>
+  </tr>
+ <tr>
+    <th class="evva-th-1">Subcomponent Minor (z, w, i)</th>
+    <td>Byte</td>
+    <td>1</td>
+    <td>e.g. 0</td>
+  </tr>
+ <tr>
+    <th class="evva-th-1">Subcomponent Patch (z, w, i)</th>
+    <td>Word</td>
+    <td>2</td>
+    <td>e.g. 654</td>
+  </tr>
+   <tr>
+    <th class="evva-th-1">Subcomponent identifier (w, i)</th>
+    <td>Array</td>
+    <td>6</td>
+    <td>e.g. 0x554433221100</td>
+    <td>Identifier of the sub-component of the device</td>
+   </tr>
+<tr>
+    <th class="evva-th-2" colspan="5"></th>
+  </tr>
+</table>
+
+
+## Device Information
+<table>
+<tr>
+  <th class="evva-th-1">Which Bits</th>
+  <th class="evva-th-1">Bit Length</th> 
+  <th class="evva-th-1">Value</th> 
+</tr>
+  <tr>
+    <th class="evva-th-1">15-10</th>
+    <td>6</td>
+    <td>Component Interface Version, see `Device types > Interface Version Values` below</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">9</th>
+    <td>1</td>
+    <td>Battery State <br/>`0`: empty<br/>`1`: full</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">8</th>
+    <td>1</td>
+    <td>Construction Mode (component main with BLE modem)<br/>`1`: construction mode<br/>`0`: installation mode</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">7</th>
+    <td>1</td>
+    <td>Construction Mode (sub component)<br/>`1`: construction mode<br/>`0`: installation mode</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">6</th>
+    <td>1</td>
+    <td>`1`: online capability<br/>`0`: offline only</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">5</th>
+    <td>1</td>
+    <td><br/>`1`: office mode enabled<br/>`0`: office mode disabled</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">4</th>
+    <td>1</td>
+    <td><br/>`1`: 2FA required<br/>`0`: 2FA not required</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">3</th>
+    <td>1</td>
+    <td><br/>`1`: office mode active<br/>`0`: not in office mode</td>
+  </tr>
+  <tr>
+   <th class="evva-th-1">2-0</th>
+    <td>3</td>
+    <td>Reserved</td>
+  </tr>
+</table>
+
+## Device types
+
+See also [Component Overview](/domain/components/component-overview/)
+<table>
+  <tr>
+    <th class="evva-th-1">EVVA component</th>
+    <th class="evva-th-1">AD Component Type Value</th>
+    <th class="evva-th-1">Length Values</th>
+    <th class="evva-th-1">Interface Version Values</th>
+  </tr>
+  <tr>
+    <th class="evva-th-1">[Handle](/domain/components/types/handle/)</th>
+    <td>100 | 0x64 | d</td>
+    <td>17|0x11</td>
+    <td>2 | 000010</td>
+  </tr>
+  <tr>
+    <th class="evva-th-1">[Escutcheon](/domain/components/types/escutcheon/))</th>
+    <td>98 | 0x62 | b</td>
+    <td>17|0x11</td>
+    <td>2 | 000010</td>
+  </tr>
+ <tr>
+    <th class="evva-th-1">[Cylinder](/domain/components/types/cylinder/)</th>
+    <td>122 | 0x7A | z</td>
+    <td>21|0x15</td>
+    <td>0 | 000000</td>
+ </tr>
+ <tr>
+    <th class="evva-th-1">[Wallreader](/domain/components/types/wallreader/) reader unit</th>
+    <td>119 | 0x77 | w</td>
+    <td>27|0x1B</td>
+    <td>1 | 000001</td>
+  </tr>
+</table>
