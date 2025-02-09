@@ -1,13 +1,13 @@
 ---
 title: BLE Mobile Disengage Sequence
-description: BLE Service Specification for the mobile identification medium
+description: Specification of the disengage sequence with a mobile identification medium
 template: doc
 sidebar:
-    order: 1
+    order: 2
 ---
 
 import { Image } from 'astro:assets';
-import sequence from '../../../../assets/mobile-disengage-sequence.svg';
+import sequence from '../../../assets/mobile-disengage-sequence.svg';
 
 The implementation that transmits the mobile identification medium uses a design with a replay protection mechanism that has a patent pending.
 See [EP3739554A1](https://patents.google.com/patent/EP3739554A1/en)
@@ -16,8 +16,8 @@ See [EP3739554A1](https://patents.google.com/patent/EP3739554A1/en)
 
 | Interface| Annotations | 
 |------|------|
-| [BLE Advertisement](/mobile/specifications/ble-advertisement/) | See documentation of the EVVA component manufacturer specific advertisement. |
-| [Mobile Identification Medium Service](/mobile/specifications/ble-mobile-identification-medium-service/) | See GATT service description |
+| [BLE Advertisement](/specifications/ble-advertisement/) | See documentation of the EVVA component manufacturer specific advertisement. |
+| [Mobile Identification Medium Service](/specifications/ble-mobile-identification-medium-service/) | See GATT service description |
 
 ## Interaction flow
 <Image src={sequence} alt="Sequence diagram of disengage with mobile identification medium." format="svg" loading="lazy" width="800"/>
@@ -97,6 +97,6 @@ See [EP3739554A1](https://patents.google.com/patent/EP3739554A1/en)
     <td>Receive access status notification from the component (see Step 2) and close connection.</td>
     <td>AccessStatus</td>
     <td>Notify</td>
-    <td>Status values are specified in [Mobile Identification Medium Service](/mobile/specifications/ble-mobile-identification-medium-service/)</td>
+    <td>Status values are specified in [Mobile Identification Medium Service](/specifications/ble-mobile-identification-medium-service/)</td>
   </tr>  
 </table>

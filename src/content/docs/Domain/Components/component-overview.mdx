@@ -3,7 +3,7 @@ title: Component Overview
 description: Overview of components
 template: doc
 sidebar:
-    order: 1
+    order: 2
 badge:
     text: Start
     variant: tip
@@ -18,8 +18,8 @@ import onlineWallreader from '../../../../assets/components/online-wallreader.sv
 import wallreader from '../../../../assets/components/wallreader.svg';
 import evvaComponent from '../../../../assets/components/evva-component-building-block.svg';
 
-EVVA mechatronical components can be installed at an [Installation Point](/domain/objects/installation-point/) to enable access control.
-[People](/domain/objects/people) that require access are authenticated and authorized using an [Identification Medium](/domain/objects/identification-medium) or a [Mobile Identification Medium](/domain/objects/mobile-identification-medium).
+EVVA mechatronical components can be installed at an [Installation Point](/domain/concepts/installation-point/) to enable access control.
+[People](/domain/concepts/people) that require access are authenticated and authorized using an [Identification Medium](/domain/concepts/identification-medium) or a [Mobile Identification Medium](/domain/concepts/mobile-identification-medium).
 
 The access control decision is taken offline in the component.
 Components can be provisioned with configuration from an access control management backend, using a serial or wireless connection from a programming device.
@@ -32,7 +32,7 @@ Components can be provisioned with configuration from an access control manageme
 | Interface |  Description |
 | ----------- | ----------- | 
 | UART (Single Wire) | Serial interface for a connector that can be attached to the component. |
-| RFID | Low range wireless interface (RFID) for interacting with an [Identification Medium](/domain/objects/identification-medium) |
+| RFID | Low range wireless interface (RFID) for interacting with an [Identification Medium](/domain/concepts/identification-medium) |
 | BLE | Bluetooth Low Energy interface for wireless interaction with the component. |
 
 ## Component types

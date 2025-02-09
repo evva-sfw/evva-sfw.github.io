@@ -1,0 +1,26 @@
+diff --git a/node_modules/@astrojs/starlight/components/Icons.ts b/node_modules/@astrojs/starlight/components/Icons.ts
+index 2d4a55a..c93204b 100644
+--- a/node_modules/@astrojs/starlight/components/Icons.ts
++++ b/node_modules/@astrojs/starlight/components/Icons.ts
+@@ -1,5 +1,13 @@
+ import { FileIcons } from '../user-components/file-tree-icons';
+ 
++/** Patched */
++export const CustomIcons = {
++	'ci-access': '<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0"/><path d="m10 16.5l2-3l2 3m-2-3v-2l3-1m-6 0l3 1"/><circle cx="12" cy="7.5" r=".5" fill="currentColor"/></g>',
++	'ci-mobile': '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zm5-1h2m-1 13v.01"/>',
++	'ci-specs': '<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2"/><path d="m9 15l2 2l4-4"/></g>',
++	'ci-xesar': '<path d="M 17.236991 2.58 L 12.590177 8.850399 L 8.57231 2.58 L 3.121446 2.58 L 8.691428 11.330447 L 2.452 20.121394 L 7.665818 20.121394 L 12.312631 13.850995 L 16.3305 20.121394 L 21.781363 20.121394 L 16.21138 11.370947 L 22.452 2.58 Z" fill="currentColor"/>',
++};
++
+ export const BuiltInIcons = {
+ 	'up-caret':
+ 		'<path d="m17 13.41-4.29-4.24a.999.999 0 0 0-1.42 0l-4.24 4.24a1 1 0 1 0 1.41 1.42L12 11.29l3.54 3.54a1 1 0 0 0 1.41 0 1 1 0 0 0 .05-1.42Z"/>',
+@@ -182,6 +190,7 @@ export const BuiltInIcons = {
+ };
+ 
+ export const Icons = {
++	...CustomIcons,
+ 	...BuiltInIcons,
+ 	...FileIcons,
+ };

@@ -3,34 +3,38 @@ title: EVVA Developer
 description: Get started building Integrations with EVVA Access Solutions
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Build integration solutions with EVVA physical access system products
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/evva-products.jpg
   actions:
-    - text: Example Guide
-      link: /guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+  - text: Mobile SDK Guide
+    link: /mobilesdk/getting-started/
+    icon: right-arrow
+  - text: Read the Mobile SDK overview
+    link: /mobilesdk/overview/
+    icon: right-arrow
+    variant: secondary
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+import { Image } from 'astro:assets';
+import mobileIcon from '../../assets/icons/mobile.svg';
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+## Content
+
+<CardGrid>
+	<Card title="Physical access systems" icon="ci-access">
+		Learn more about the [physical access system domain](/domain/overview/). 
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Mobile SDK" icon="ci-mobile">
+		Learn more about the [Mobile SDK](/mobilesdk/overview/) and how to use it.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Xesar Software" icon="ci-xesar">
+		Learn more about the [Xesar Software](/xesarsoftware/overview/).
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+
+	<Card title="Specifications" icon="ci-specs">
+		Here you can find formal service and interface [specifications](/specifications/overview/).
 	</Card>
 </CardGrid>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="2.452 2.58 20 17.541394" width="20" height="17.541394">
+  <defs/>
+  <g id="Canvas_1" fill-opacity="1" stroke="none" fill="none" stroke-opacity="1" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <title>Bézier</title>
+        <path d="M 17.236991 2.58 L 12.590177 8.850399 L 8.57231 2.58 L 3.121446 2.58 L 8.691428 11.330447 L 2.452 20.121394 L 7.665818 20.121394 L 12.312631 13.850995 L 16.3305 20.121394 L 21.781363 20.121394 L 16.21138 11.370947 L 22.452 2.58 Z" fill="#575756"/>
+      </g>
+    </g>
+  </g>
+</svg>

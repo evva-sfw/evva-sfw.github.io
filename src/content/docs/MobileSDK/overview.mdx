@@ -7,7 +7,7 @@ sidebar:
 ---
 
 import { Image } from 'astro:assets';
-import distributionView from '../../../../assets/mobile-disengage-distribution.svg';
+import distributionView from '../../../assets/mobile-disengage-distribution.svg';
 
 The SDK for mobile devices was designed to allow developers to integrate with
 [EVVA components](/domain/components/component-overview/) from the Xesar mechatronical System into their own mobile applications.
@@ -30,13 +30,13 @@ may for example be an ERP or a booking system.
 # Understand the Mobile SDK
 
 Mobile Disengage with [EVVA components](/domain/components/component-overview/) (Xesar system) works over Bluetooth Low Energy and uses
-1. the continuous [BLE Advertisement of EVVA components](/mobile/specifications/ble-advertisement/)
-1. the GATT standard based [Mobile Identification Medium Service](/mobile/specifications/ble-mobile-identification-medium/)
-to provide authentication and authorization capabilities  equivalent to the standard [Identification Medium](/domain/objects/identification-medium/) in a Xesar.
+1. the continuous [BLE Advertisement of EVVA components](/specifications/ble-advertisement/)
+1. the GATT standard based [Mobile Identification Medium Service](/specifications/ble-mobile-identification-medium/)
+to provide authentication and authorization capabilities  equivalent to the standard [Identification Medium](/domain/concepts/identification-medium/) in a Xesar.
 
 ## Functionality covered by the SDK
 
-- Scan for EVVA devices (see [BLE Advertisement of EVVA components](/mobile/specifications/ble-advertisement/))
+- Scan for EVVA devices (see [BLE Advertisement of EVVA components](/specifications/ble-advertisement/))
 - Lokalise Component
 - Disengage
     - Temporary
@@ -48,10 +48,10 @@ to provide authentication and authorization capabilities  equivalent to the stan
 
 ## Responsibilities of the SDK
 
-The implementation in the SDK handles the BLE communication and the full [disengage sequence flow](/mobile/specifications/ble-mobile-disengage/) with the [EVVA Component](/domain/components/component-overview/).
+The implementation in the SDK handles the BLE communication and the full [disengage sequence flow](/specifications/ble-mobile-disengage/) with the [EVVA Component](/domain/components/component-overview/).
 This includes the required cryptographical operations.
 
-The responsibility will be gradually be extended with support for features around provisioning and the handling of an [Identification Medium](/domain/objects/identification-medium/)).
+The responsibility will be gradually be extended with support for features around provisioning and the handling of an [Identification Medium](/domain/concepts/identification-medium/)).
 Therefore, the SDK already includes basic support for RFID as well as an MQTT client.
 
 ## Responsibilities of your mobile application
@@ -66,11 +66,11 @@ Therefore, the SDK already includes basic support for RFID as well as an MQTT cl
 
 ## Supported forms of application development
 
-- Support for [native mobile application development with libraries](/mobile/sdk/native-libraries)
-    - [Apple](/mobile/sdk/platforms/apple/)
-    - [Android](/mobile/sdk/platforms/android/)
+- Support for [native mobile application development with libraries](/mobilesdk/native-libraries)
+    - [Apple](/mobilesdk/platforms/apple/)
+    - [Android](/mobilesdk/platforms/android/)
 - Support for cross-platform mobile application development
-    - [React Native](/mobile/sdk/multiplatform/react-native)
-    - [Flutter Plugin](/mobile/sdk/multiplatform/flutter)
-    - [Capacitor Plugin](/mobile/sdk/multiplatform/capacitor)
+    - [React Native](/mobilesdk/multiplatform/react-native)
+    - [Flutter Plugin](/mobilesdk/multiplatform/flutter)
+    - [Capacitor Plugin](/mobilesdk/multiplatform/capacitor)
 
