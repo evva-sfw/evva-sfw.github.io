@@ -6,6 +6,8 @@ sidebard:
   order: 2
 ---
 
+import { Badge } from '@astrojs/starlight/components';
+
 <table>
   <tr>
     <th>Service UID</th>
@@ -42,3 +44,6 @@ sidebard:
 | 0x05 00 | Out | 5	 | authorized, battery low |
 | 0x07 00 | In  | 7	 | Signal for localisation |
 | 0x1A 00 | Out | 26 | blacklisted |
+
+## 
+<Badge text="Specification" variant="note" /><Badge text="Mobile" variant="note" /><Badge text="BLE" variant="note" />
