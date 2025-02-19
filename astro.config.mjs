@@ -24,23 +24,23 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Domain',
-					// Autogenerate a group of links for the 'mobile' directory.
 					autogenerate: { directory: 'Domain' },
 				},
 				{
 					label: 'Mobile SDK',
-					// Autogenerate a group of links for the 'mobile' directory.
 					autogenerate: { directory: 'MobileSDK' },
 				},
 				{
 					label: 'Xesar Software',
-					// Autogenerate a group of links for the 'specifications' directory.
 					autogenerate: { directory: 'XesarSoftware' },
 				},
 				{
 					label: 'Specifications',
-					// Autogenerate a group of links for the 'specifications' directory.
 					autogenerate: { directory: 'Specifications' },
+				},
+				{
+					label: 'Guides',
+					autogenerate: { directory: 'Guides' },
 				},
 			]
 		}),
