@@ -18,9 +18,9 @@ export default defineConfig({
 				light: './src/assets/EVVA-Logo-light.svg',
 				dark:  './src/assets/EVVA-Logo-dark.svg'
 			},
-			social: {
-				github: 'https://github.com/evva-sfw/evva-sfw.github.io',
-			},
+			social: [
+				{icon: 'github', label: 'GitHub', href: 'https://github.com/evva-sfw/evva-sfw.github.io'},
+			],
 			sidebar: [
 				{
 					label: 'Domain',
