@@ -1,6 +1,6 @@
 ---
-title: Component Overview
-description: Overview of components
+title: Access Component Overview
+description: Overview of access components
 template: doc
 sidebar:
     order: 2
@@ -18,11 +18,15 @@ import onlineWallreader from '../../../../assets/components/online-wallreader.sv
 import wallreader from '../../../../assets/components/wallreader.svg';
 import evvaComponent from '../../../../assets/components/evva-component-building-block.svg';
 
-EVVA mechatronical components can be installed at an [Installation Point](/domain/concepts/installation-point/) to enable access control.
-[People](/domain/concepts/people) that require access are authenticated and authorized using an [Identification Medium](/domain/concepts/identification-medium) or a [Mobile Identification Medium](/domain/concepts/mobile-identification-medium).
+EVVA mechatronical access components can be installed at an [Installation Point](/domain/concepts/installation-point/) to enable access control.
+[People](/domain/concepts/people) that require access are authenticated and authorized using an [Identification Medium](/domain/concepts/identification-medium) 
+or a [Mobile Identification Medium](/domain/concepts/mobile-identification-medium).
+Following privacy by design principles, the EVVA access control system is designed in a way that you are not required to administrate people and their
+personal data - if you want to, you can work with identification media only.
 
-The access control decision is taken offline in the component.
-Components can be provisioned with configuration from an access control management backend, using a serial or wireless connection from a programming device.
+The access control decision is always taken offline in the access component.
+Access components can be provisioned with configuration data from an access control management backend, using a serial or wireless connection from a
+ [Programming Device](/domain/concepts/programming-device).
 
 ## Building Block View
 <Image src={evvaComponent} alt="EVVAComponent package view with interfaces." format="svg" loading="lazy" width="400"/>
