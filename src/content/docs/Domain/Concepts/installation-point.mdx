@@ -5,3 +5,18 @@ template: doc
 sidebar:
     order: 5
 ---
+
+import { Image } from 'astro:assets';
+import installationPoint from '../../../../assets/domain/installation-point.svg';
+
+<Image src={installationPoint} alt="Installation Point" format="svg" loading="lazy" width="90"/>
+
+
+Is the physical location where an [Access component](/domain/concepts/access-component) is installed for physical access control.
+e.g.
+* Door
+* Storage Locker or Closet
+* Elevator
+* gate barrier
+
+An installation point can be part of a [Zone](/domain/concepts/zone).

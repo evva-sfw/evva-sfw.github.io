@@ -5,3 +5,17 @@ template: doc
 sidebar:
     order: 5
 ---
+
+import { Image } from 'astro:assets';
+import identificationMedia from '../../../../assets/domain/identification-media.svg';
+
+<Image src={identificationMedia} alt="Identification Media." format="svg" loading="lazy" width="100"/>
+
+Is a form of digital credential within an access control system that can be issued to a [Person](/domain/concepts/person) and then used by the person for [Authentication](/domain/concepts/authentication) and [Authorization](/domain/concepts/authorization) 
+at an [Access Component](/domain/concepts/access-component). 
+
+A lost identification medium can be blocked using the [Blocklist](/domain/concepts/blocklist).
+
+There exist two different types of identification media:
+1. [RFID identification medium](/domain/concepts/rfid-identification-medium)
+2. [Mobile identification medium](/domain/concepts/mobile-identification-medium)

@@ -1,0 +1,22 @@
+---
+title: Calendar (Days)
+description: Calendar days
+template: doc
+sidebar:
+    order: 5
+---
+
+import { Image } from 'astro:assets';
+import calendar from '../../../../assets/domain/calendar.svg';
+
+<Image src={calendar} alt="Calendar." format="svg" loading="lazy" width="100"/>
+
+A calendar day is a day on the standard Gregorian calendar that is in use worldwide for civil purposes.
+
+It is used in [time series exceptions](/domain/concepts/time-series-exception) to provision special days with a different [Time Window](/domain/concepts/time-window)
+than it would normally have on the given weekday of the [Time Series](/domain/concepts/time-series). The configuration is actually on the [Access component](/domain/concepts/access-component).
+
+
+### Example
+
+01.01.2026, 24.12.2026, 31.12.2026
