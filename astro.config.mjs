@@ -7,7 +7,7 @@ export default defineConfig({
 	site: 'https://developer.evva.link',
 	integrations: [
 		starlight({
-			title: 'Developer',
+			title: '',
 			customCss: [
 				'@fontsource/open-sans/400.css',
 				'@fontsource/open-sans/600.css',

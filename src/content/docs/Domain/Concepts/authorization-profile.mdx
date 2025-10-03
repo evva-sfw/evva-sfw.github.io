@@ -1,0 +1,16 @@
+---
+title: Authorization Profile
+description: Authorization profile
+template: doc
+sidebar:
+    order: 5
+---
+
+import { Image } from 'astro:assets';
+import authorizationProfile from '../../../../assets/domain/authorization-profile.svg';
+
+<Image src={authorizationProfile} alt="Authorization profile." format="svg" loading="lazy" width="100"/>
+
+Defines a logical set of [Authorizations](/domain/concepts/authorization) for [Installation points](/domain/concepts/installation-point) and 
+[Zones](/domain/concepts/zone). It organizes authorizations to make them easier to assign to a [Person](/domain/concepts/person) as a standard default, 
+respectively an [Identification Medium](/domain/concepts/identification-medium) for authorization.

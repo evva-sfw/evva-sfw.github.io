@@ -1,0 +1,16 @@
+---
+title: Person
+description: Person in the locking system domain.
+template: doc
+sidebar:
+    order: 5
+---
+
+import { Image } from 'astro:assets';
+import person from '../../../../assets/domain/person.svg';
+
+<Image src={person} alt="Person." format="svg" loading="lazy" width="50"/>
+
+A person is a human that requires physical access to a place or a storage.
+
+Usually people are carrying an [Identification Medium](/domain/concepts/identification-medium), which will be used for [Authentication](/domain/concepts/authentication) and [Authorization](/domain/concepts/authorization).

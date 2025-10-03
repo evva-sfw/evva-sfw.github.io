@@ -5,3 +5,12 @@ template: doc
 sidebar:
     order: 5
 ---
+
+import { Image } from 'astro:assets';
+import area from '../../../../assets/domain/area.svg';
+
+<Image src={area} alt="Zone" format="svg" loading="lazy" width="90"/>
+
+
+A set of [Installation points](/domain/concepts/installation-point) that can directly be used for [Authorization](/domain/concepts/authorization).
+An [Access component](/domain/concepts/access-component) can be assigned to one or more zones.

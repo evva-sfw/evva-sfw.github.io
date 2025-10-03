@@ -1,0 +1,18 @@
+---
+title: Access Component
+description: Access Component
+template: doc
+sidebar:
+    order: 5
+---
+
+import { Image } from 'astro:assets';
+import accessComponents from '../../../../assets/domain/access-components.svg';
+
+<Image src={accessComponents} alt="Access components." format="svg" loading="lazy" width="100"/>
+
+
+An electromechanical component, that can be installed at an [Installation Point](/domain/concepts/installation-point) for physical access control.
+It performs [Authentication](/domain/concepts/authentication) and [Authorization](/domain/concepts/authorization) and permits access only when both can be established.
+
+You can find an overview of Access Components and component types [here](/domain/access-components/component-overview).
