@@ -5,3 +5,100 @@ template: doc
 sidebar:
     order: 5
 ---
+
+### Overview
+
+Please refer to the [Mobile SDK Overview](/mobilesdk/overview/) first to understand the architectural constraints and 
+responsibilities.
+
+When writing your own mobile application, you need to have some type of middleware that sits in between the Xesar Installation, your own 
+application (e.g. ERP, Booking System etc.) and the installations of your mobile application. 
+
+This middleware has to cover following responsibilities:
+* Retrieve Access Data for identification media and provide to the mobile application instance as you see fit.
+* Handle and relay events from the Xesar Installation.
+* Security of data in transport and data at rest in your mobile application.
+
+Xesar has to be higher then version 3.3 and requires to be swiched into self service mode.
+
+### Xesar Thirdparty API documentation
+
+The Xesar thirdparty API Documentation has been added to the Xesar Installation. It can be found browsing the Xesar UI and navigating 
+to _Support_ and then to _Xesar interface documentation_.
+
+The documentation contains hints and also examples for payloads. It also always points out which permissions are required for the interface
+user to be able to issue commands or queries.
+ 
+There are also sections that contains information on how to connect to the MQTT Broker that is part of the Xesar Installation.
+Please note, that there is now also REST Support for obtaining the required client credentials, including the token that is required to be send with commands and queries.
+
+### Self service mode
+
+To be able to integrate your own solution for mobile phone based access, Xesar needs to be switched to Self-Service Mode.
+There is a corresponding section in the documentation that explains more about it:
+```<Your Xesar Installations Base URL>/api/docs/#self-service-mode```
+
+Essentially this is a call to ```xs3/1/cmd/SetMobileServiceModeMapi``` with the ```mobileServiceMode``` parameter
+set to ```SELF_SERVICE```.
+
+A word of warning: the switch to self-service-mode cannot be undone.
+
+When you switched to the self service mode, you should make sure that your middleware communicates with the Xesar backend and also handles 
+and relays events from Xesar to your mobile application instances.
+
+### Retrieve Access Data for Identification media
+
+The access data for a mobile can be obtained by publishing a query to the topic ```xs3/1/q```with the query resource set to ```identification-media-access-data```.
+This will require the permissions ```ViewMedium``` for the interface user and ```ViewAllIdentificationMedia``` when attempting
+bulk queries.
+
+Example query for a medium with ID ```42016cb3-73a3-4da4-b903-414b2144a8b3``` published to ```xs3/1/q```
+
+``` 
+{
+   "requestId": "6d23cfcf-f447-4c50-a63b-199de815447a",
+   "id": "42016cb3-73a3-4da4-b903-414b2144a8b3"
+   "resource": "identification-media-access-data",
+   "token": "..."
+ }
+ ```
+
+* ```requestId```: The query response will include this ID for correlation, therefor it should be a UUID
+* ```token```: The token obtained by downloading user certificate bundle or proceeding with a login, please refer to the Xesar interface documentation for more information
+ 
+The response will be published on ```xs3/1/{userId}/q```, which is the interface user response queue.
+Thus replace ```{userId}``` with the unique identifier of the authorized interface user making the request.
+
+### Metadata from Xesar for your Mobile application
+
+Please note that [Access components](/domain/concepts/access-component) do not provide any metadata through the BLE interface.
+To map the components to metadata, you need to map the scan results identifier (which is the public BLE MAC address) to the provided 
+public BLE address in the metadata that forms part of the access data you can retrieve from the Xesar backend. i.e.
+see ```identificationMedium.metadata.accessPoints[]```
+
+Metadata includes an array with all [Installation Points](/domain/concepts/installation-point) the credential will have access to.
+
+* ```accessDescription```: a ```string``` that will describe eventual temporal restrictions of authorizations; currently *unused*
+* ```bleMac```: a ```string``` that represents a HEX encoded form of the public BLE MAC bytes as advertised by the component (see [BLE Advertisement Specification](/specifications/ble-advertisement/), ```identifier```)
+* ```name```: a ```string``` that represents the name of the [Installation Point](/domain/concepts/installation-point)
+
+We would suggest that your application should have some queryable structured storage to easily and quickly retrieve this mapping by itself.
+
+The reference in the Xesar interface documentation is ```QueryResponse-identification-media-access-data```.
+
+### Authorizations
+
+For an understanding of the way authorizations work in Xesar, please take a look at the [Conceptual Overview](/domain/concepts/overview).
+
+To obtain authorizations, you need to proceed along the lines of standard Xesar setup (the procedure using the UI is normally instructed by our technical offices to partners).
+ All of these operations are also to be found in our third party interface.
+ 
+* Create Authorization Profiles: ```xs3/1/cmd/CreateAuthorizationProfileMapi```
+* Change Authorization Profiles to add or remove [Installation Points](/domain/concepts/installation-point) or [Zones]: (/domain/concepts/zone) ```xs3/1/cmd/ChangeAuthorizationProfileMapi```
+* Assign an authorization profile to a medium: ```xs3/1/cmd/AssignAuthorizationProfileToMediumMapi```
+ 
+Please note that when effecting changes, you need to wait for events to occur to query new data.
+In case of an identification medium you are often interested in a corresponding ```xs3/1/ces/MediumChanged``` event.
+ 
+
+
