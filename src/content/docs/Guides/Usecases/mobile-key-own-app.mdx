@@ -1,0 +1,63 @@
+---
+title: Integrate Mobile Key in your own mobile application
+description: Describes the steps required to integrate a mobile key into your own app
+template: doc
+sidebar:
+    order: 1
+---
+
+### Use Case
+
+You want to integrate the Xesar mobile key into your own mobile application?
+
+Here is a checklist of things that need to be done:
+
+| Section                                                                           | Description                                    |
+|-----------------------------------------------------------------------------------|------------------------------------------------|
+| [Setup and understand Xesar](#how-to-setup-xesar-and-provision-access-components) | Explains why Xesar is needed and what it does. |
+|                                                                                   |                                                |
+
+## 1. Setup and understand Xesar
+
+### Why do I need Xesar?
+
+The Xesar Software is required to provision the [access control components](/domain/access-components/component-overview) and to periodically
+obtain the mobile key data that is required for access when using the mobile application SDK.
+
+Essentially, it is the source for the input required for a disengage:
+
+| Parameter in Mobile SDK | Parameter in Xesar mobile key data | Description |
+| ----------- | ----------- | ----------- |
+|mobileId|xsMobileId|sha256-hashed hex-encoded version of `xsMobileId` found in the Xesar provided data|
+|mobileDeviceKey|xsMOBDK| mobile device key string from `xsMOBDK` found in the Xesar provided data|
+|mobileGroupId|xsMOBGID| mobile group id string from `xsMOBGID` found in the Xesar provided data|
+|mediumAccessData|mediumDataFrame| access data string from `mediumDataFrame` found in the Xesar Provided data |
+
+Periodical updates are required, because the mobile key data is subject to validity and confguration changes in Xesar.
+
+### How to setup Xesar and provision Access Components?
+
+You can find a lot of resources in different languages on how to setup and operate [Xesar](https://www.evva.com/xesar) itself.
+A trusted EVVA partner will help you get started, especially with the all the hardware - [access components](/domain/access-components/component-overview)
+
+Xesar provides a third party interface via MQTT, that can be used to integrate and orchestrate Xesar from your own services.
+Here is where you can find the [Third Party Interface API documentation](/xesarsoftware/api) for the current and previous versions.
+
+We strongly recommend:
+1. to have your mobile application talking to your service(s) as a middleware towards Xesar
+2. to think about/implement and authentication for your mobile application against your service
+3. to pactice _Privacy_ and _Security by Design_ principles when implementing your middleware
+
+### Put Xesar into Self Service Mode
+
+When you want to provide mobile keys to your own mobile application, you need to put Xesar into Mobile [self service mode](/mobilesdk/middleware-notes/#self-service-mode).
+Note that this change _cannot be reverted_, so a backup from before this step might come handy if you plan to do so, specially if you
+already added components.
+
+### Obtain access to the REST interface
+
+You can actually obtain the certificates from the REST interface:
+[Access through the Rest API](https://integrations.api.xesar.evva.com#obtaining-mqtt-access-configuration-via-the-rest-api)
+
+
+
