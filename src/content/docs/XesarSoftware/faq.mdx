@@ -1,0 +1,118 @@
+---
+title: FAQ
+description: Frequently asked questions
+template: doc
+sidebar:
+  order: 5
+---
+
+<details>
+  <summary>Why can't I store the settings on my Xesar 3 installation?!</summary>
+  The most likely issue is, that you need to change the pin code for the Xesar Tablet before you can save the settings.
+  This has been changed in newer versions of Xesar 3.
+
+  :::note
+  We still strongly recommend to use the pin code for the Xesar Tablet as a second factor security when
+  adding new Xesar access components to an installation.
+  :::
+</details>
+
+<details>
+  <summary>How can I obtain the identifiers for the new entity metadata?</summary>
+  Currently if you have not acquired the identifiers for the metadata you cannot set them on new entities you create
+  through the interface.
+
+  Unfortunately there is no query for listing these, so the only viable option is to cause a
+  `PartitionChanged`(https://integrations.api.xesar.evva.com/#operation-subscribe-xs3/1/ces/PartitionChanged-message) Event that will give you the definitions.
+
+  You can do that for example by using a [`SetDailySchedulerExecutionTimeMapi`](https://integrations.api.xesar.evva.com/#operation-publish-xs3/1/cmd/SetDailySchedulerExecutionTimeMapi) call.
+  Once you have the identifiers, you can set the right metadata fields when creating a new entity.
+</details>
+
+<details>
+  <summary>How can I clear the authorization profile for a user?</summary>
+  You can set the authorization profile using [`SetDefaultAuthorizationProfileForPersonMapi`](https://integrations.api.xesar.evva.com/#operation-publish-xs3/1/cmd/SetDefaultAuthorizationProfileForPersonMapi).
+
+  The value for the key `defaultAuthorizationProfile` needs to be `null` as a token (as defined by JSON grammar) and not as a string.
+</details>
+
+
+<details>
+  <summary>How can I set the default for the validity when adding a smartphone?</summary>
+  When you add a new smartphone using the [`AddSmartphoneToInstallationMapi`](https://integrations.api.xesar.evva.com/#operation-publish-xs3/1/cmd/AddSmartphoneToInstallationMapi)
+  you can _omit_ the key `validityDuration` (i.e. don't add this property). This way you will get the default from XS3 configuration.
+
+  :::note
+  We recommend to set the validity no higher than two weeks for smartphones.
+  :::
+</details>
+
+<details>
+  <summary>What is the meaning of the `LOCKED_INSECURE` and `LOCKED_SECURE` states on my mobile phones?</summary>
+  `LOCKED_INSECURE` means the blacklist was not yet distributed to all components the identification medium had
+   access to, so there may still be access.
+
+
+  `LOCKED_SECURE` means that the blacklist was distributed to all components the identification medium had access to,
+  so there is no access any more. Alternatively it might also be that it can no longer be valid, so it was marked as secure in the
+  backend.
+</details>
+
+<details>
+  <summary>Why can't I remove a locked identification medium or mobile phone?</summary>
+  There is currently no way to delete any identification media.
+
+  The historic reason for this is simple to explain:
+
+  1. if it is broken, you cannot know if it is the right one you were given back
+  2. the access system is always required to keep and correlate all the records
+
+  A way to make them less visible is in the queue (kind of a Schrödinger’s State).
+  For mobile phones the design decision was to make them exactly like RFID media, so that’s what it is now.
+</details>
+
+<details>
+  <summary>Will revoking a smartphone cause blacklisting?</summary>
+  Yes, a revoke will cause blacklisting.
+</details>
+
+<details>
+  <summary>How do I aquire the information to confirm the revocation of a smartphone using `ConfirmSmartphoneRevokeMapi`?</summary>
+  1. Xesar will emit the event [`SmartphoneRevokePending`](https://integrations.api.xesar.evva.com/#operation-subscribe-xs3/1/mss/ces/SmartphoneRevokePending-message) whenever a smartphone is revoked.
+  2. Your service (middleware) should know what to do with it's supported app and then send a [`ConfirmSmartphoneRevokeMapi`](https://integrations.api.xesar.evva.com/#operation-publish-xs3/1/mss/cmd/ConfirmSmartphoneRevokeMapi-message)
+  with the corresponding parameters from (1).
+  3. Xesar will emit a ['SmartphoneRevokeConfirmed'](https://integrations.api.xesar.evva.com/#operation-subscribe-xs3/1/mss/ces/SmartphoneRevokeConfirmed)
+</details>
+
+<details>
+  <summary>What if the service missed 'SmartphoneRevokePending'?</summary>
+  If your service misses the [`SmartphoneRevokePending`](https://integrations.api.xesar.evva.com/#operation-subscribe-xs3/1/mss/ces/SmartphoneRevokePending-message)
+  and looses track of the transaction IDs or state of the Smartphone, you can query the `identification-media-access-data` resource
+  via `xs3/1/q`. This resource is also filterable by the state field - here `REVOKED` - if you need to find Smartphones in a specific transaction state.
+  e.g.:
+  ```json
+  {
+    "requestId": "dc9b0595-eaf6-4c81-b4e0-995be7e1c76d",
+    "token": "<Your token>",
+    "resource": "persons",
+    "params": {
+      "pageOffset":0,
+      "pageLimit":50,
+      "filters":[
+        {
+          "type": "eq",
+          "field": "identifier",
+          "value": "2133"
+        }
+      ]
+    }
+  }
+  ```
+  You can then re-issue a [`RevokeSmartphoneMapi`](https://integrations.api.xesar.evva.com/#operation-publish-xs3/1/cmd/RevokeSmartphoneMapi-message)
+  and Xesar 3 will emit the event [`SmartphoneRevokePending`](https://integrations.api.xesar.evva.com/#operation-subscribe-xs3/1/mss/ces/SmartphoneRevokePending-message) and you
+  can proceed with steps 2) and 3) from "How do I aquire the information to confirm the revocation of a smartphone using `ConfirmSmartphoneRevokeMapi`?"
+</details>
+
+
+
+

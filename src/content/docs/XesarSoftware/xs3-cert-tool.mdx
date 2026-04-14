@@ -1,0 +1,76 @@
+---
+title: xs3-cert-tool
+description: Tool for obtaining the access configuration for the XS3 interface from the XS3 REST API.
+template: doc
+sidebar:
+    order: 6
+---
+
+import { Image } from 'astro:assets';
+import mqttxClientConfig from '../../../assets/xesarsw/mqttx-config.png';
+
+### Xesar MQTT Broker Access Configuration
+
+General information about access to the MQTT broker to interact with the interface can be found [here](/xesarsoftware/interface-access).
+
+Using the [REST interface](/xesarsoftware/interface-access#obtain-via-rest-interface) is simple, but it is
+kind of a standard issue and requires some thinking about startup sequence and timing of acquisition of the access
+configuration.
+
+To address these issues we have build a statically linked tool:
+[xs3-cert](https://github.com/evva-sfw/xs3-cert)
+
+At the repo you can find statically linked ``arm64`` and ``amd64`` Linux binaries that can obtain and store the access
+configuration with the client key and certificate.
+
+This tool can also act as a launcher, so it's useful launching your own service either through ''systemd''' or within a
+''container''.
+
+This makes it also pretty easy to define a restart policy and automatically pull a certificate update :)
+
+### Local usage
+```
+./xs3-cert get --params-file api.properties --outpath ./certs"
+```
+
+You can then use that configuration with an MQTT client like [MQTTX](https://mqttx.app):
+
+<Image src={mqttxClientConfig} alt="MQTTX Client configuration." format="png" loading="lazy" width="800"/>
+
+### api.properties
+```api.properties
+USERNAME=<username>
+PASSWORD=<password>
+XS3_URL=<URL to Xesar>
+```
+
+### Unit file
+```
+[Unit]
+Description=Xesar App Certificate Fetch
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/xs3-cert get --params-file api.properties --outpath /opt/myservice/  --start-process /opt/myservice/bin/myservice
+WorkingDirectory=/opt/myservice
+StartLimitBurst=1
+StartLimitIntervalSec=60
+KillMode=control-group
+TimeoutStopSec=10
+EnvironmentFile=-/etc/environment
+EnvironmentFile=-/etc/xs3-cert/api.properties
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Container startup
+
+```
+ENTRYPOINT [ "/service/xs3-cert", "get", "--params-file", "/etc/xs3-cert/api.properties", "--outpath", "/certs", "--start-process", "/service/service"]
+```
