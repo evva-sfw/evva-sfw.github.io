@@ -26,8 +26,8 @@ import { Badge } from '@astrojs/starlight/components';
 ## Characteristics
 
 | Characteristic | Attribute UID | Properties | Description | Constraints |
-| ------ | ------ | ------ | ------ | ------ | 
-| MobileGroups | 9DB2CA58-D890-46D5-A142-59F3C1164B10 | *read* | List of  Identifiers valid for the given [Component](/domain/components/component-overview/). Contains 16 entries of 32 byte UUID's  | Attribute size 512 bytes |
+| ------ | ------ | ------ | ------ | ------ |
+| MobileGroups | 9DB2CA58-D890-46D5-A142-59F3C1164B10 | *read* | List of  Identifiers valid for the given [Component](/domain/access-components/component-overview/). Contains 16 entries of 32 byte UUID's  | Attribute size 512 bytes |
 | Challenge | 9DB2CA59-D890-46D5-A142-59F3C1164B10 | *read* | Random Challenge is valid within a single connection. | Attribute size is 13 bytes |
 | MobileAccessData | 9DB2CA5A-D890-46D5-A142-59F3C1164B10 | *write* | Receives the mobile access data from the transmitting device.| Attribute size is 706 bytes  |
 | AccessStatus | 9DB2CA5B-D890-46D5-A142-59F3C1164B10 | *read, notify, write* | Status attribute updated and notified after authentication with transmitted mobile access data. | Single Word (Little Endian, LE); see values. |
@@ -45,5 +45,5 @@ import { Badge } from '@astrojs/starlight/components';
 | 0x07 00 | In  | 7	 | Signal for localisation |
 | 0x1A 00 | Out | 26 | blacklisted |
 
-## 
+##
 <Badge text="Specification" variant="note" /><Badge text="Mobile" variant="note" /><Badge text="BLE" variant="note" />
