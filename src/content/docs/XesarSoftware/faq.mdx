@@ -77,7 +77,7 @@ sidebar:
 </details>
 
 <details>
-  <summary>How do I aquire the information to confirm the revocation of a smartphone using `ConfirmSmartphoneRevokeMapi`?</summary>
+  <summary>How do I acquire the information to confirm the revocation of a smartphone using `ConfirmSmartphoneRevokeMapi`?</summary>
   1. Xesar will emit the event [`SmartphoneRevokePending`](https://integrations.api.xesar.evva.com/#operation-subscribe-xs3/1/mss/ces/SmartphoneRevokePending-message) whenever a smartphone is revoked.
   2. Your service (middleware) should know what to do with it's supported app and then send a [`ConfirmSmartphoneRevokeMapi`](https://integrations.api.xesar.evva.com/#operation-publish-xs3/1/mss/cmd/ConfirmSmartphoneRevokeMapi-message)
   with the corresponding parameters from (1).
@@ -110,7 +110,7 @@ sidebar:
   ```
   You can then re-issue a [`RevokeSmartphoneMapi`](https://integrations.api.xesar.evva.com/#operation-publish-xs3/1/cmd/RevokeSmartphoneMapi-message)
   and Xesar 3 will emit the event [`SmartphoneRevokePending`](https://integrations.api.xesar.evva.com/#operation-subscribe-xs3/1/mss/ces/SmartphoneRevokePending-message) and you
-  can proceed with steps 2) and 3) from "How do I aquire the information to confirm the revocation of a smartphone using `ConfirmSmartphoneRevokeMapi`?"
+  can proceed with steps 2) and 3) from "How do I acquire the information to confirm the revocation of a smartphone using `ConfirmSmartphoneRevokeMapi`?"
 </details>
 
 
