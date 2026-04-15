@@ -44,10 +44,14 @@ PASSWORD=<password>
 XS3_URL=<URL to Xesar>
 ```
 
-### Unit file
-```
+### systemd unit files
+
+You can use `systemd` to run your service and restart it fetching new certificates from the backend. This will also
+provide improved security for the certificates.
+
+```systemd title="myservice.service"
 [Unit]
-Description=Xesar App Certificate Fetch
+Description=My Service with Certificate Fetch
 After=network.target
 StartLimitIntervalSec=0
 
@@ -69,8 +73,29 @@ EnvironmentFile=-/etc/xs3-cert/api.properties
 WantedBy=multi-user.target
 ```
 
+```systemd title="myservice-restart.service"
+[Unit]
+Description=Restart myservice service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/systemctl restart myservice.service
+EOF
+```
+```systemd title="myservice-restart.timer"
+[Unit]
+Description=Monthly restart of myservice binary
+
+[Timer]
+Unit=myservice-restart.service
+OnCalendar=*-*-01 03:00:00
+
+[Install]
+WantedBy=timers.target
+```
+
 ### Container startup
 
-```
+```dockerfile title="Dockerfile entry point"
 ENTRYPOINT [ "/service/xs3-cert", "get", "--params-file", "/etc/xs3-cert/api.properties", "--outpath", "/certs", "--start-process", "/service/service"]
 ```
