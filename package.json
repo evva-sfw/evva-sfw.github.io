@@ -4,22 +4,21 @@
   "version": "0.0.1",
   "scripts": {
     "postinstall": "patch-package",
+    "build:patch": "patch-package",
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
-  "overrides": {
-    "esbuild": "0.25.0"
-  },
   "dependencies": {
-    "@astrojs/starlight": "^0.35.2",
-    "@fontsource/open-sans": "^5.2.6",
-    "astro": "^5.16.0",
-    "sharp": "^0.34.3"
+    "@astrojs/starlight": "^0.38.3",
+    "@fontsource/open-sans": "^5.2.7",
+    "astro": "^6.1.5",
+    "sharp": "^0.34.5",
+    "starlight-links-validator": "^0.23.0"
   },
   "devDependencies": {
-    "patch-package": "^8.0.0"
+    "patch-package": "^8.0.1"
   }
 }

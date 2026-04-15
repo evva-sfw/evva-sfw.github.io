@@ -8,8 +8,8 @@ sidebar:
 
 import { Badge } from '@astrojs/starlight/components';
 
-[EVVA Components](/domain/components/component-overview/) use a BLE manufacturer advertisement with a registered 
-manufacturer identifier ([BLE Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/), 0x0869). 
+[EVVA Components](/domain/access-components/component-overview/) use a BLE manufacturer advertisement with a registered
+manufacturer identifier ([BLE Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/), 0x0869).
 It follows the Core Specification 5.4, Vol 3, Part C, Section 11, Figure 11.1: ADVERTISING AND SCAN RESPONSE DATA FORMAT (Core_v5.4_ADV.pdf).
 
 <table>
@@ -69,8 +69,8 @@ It follows the Core Specification 5.4, Vol 3, Part C, Section 11, Figure 11.1: A
     <td rowspan="3">
       <ul>
         <li>Major, Minor, Patch FW Version of the component</li>
-        <li>[Wallreader](/domain/components/types/wallreader/) and [Online Wallreader](/domain/components/types/online-wallreader/): Version of the reader unit</li>
-        <li>[Cylinder](/domain/components/types/cylinder/) : Version of head</li>
+        <li>[Wallreader](/domain/access-components/types/wallreader/) and [Online Wallreader](/domain/access-components/types/online-wallreader/): Version of the reader unit</li>
+        <li>[Cylinder](/domain/access-components/types/cylinder/) : Version of head</li>
       </ul>
     </td>
   </tr>
@@ -111,8 +111,8 @@ It follows the Core Specification 5.4, Vol 3, Part C, Section 11, Figure 11.1: A
     <td rowspan="3">
       <ul>
         <li>Major, Minor, Patch FW Version of subcomponent</li>
-        <li>[Wallreader](/domain/components/types/wallreader/) and [Online Wallreader](/domain/components/types/online-wallreader/): Version of connected control unit</li>
-        <li>[Cylinder](/domain/components/types/cylinder/) : Version of module</li>
+        <li>[Wallreader](/domain/access-components/types/wallreader/) and [Online Wallreader](/domain/access-components/types/online-wallreader/): Version of connected control unit</li>
+        <li>[Cylinder](/domain/access-components/types/cylinder/) : Version of module</li>
       </ul>
     </td>
   </tr>
@@ -145,8 +145,8 @@ It follows the Core Specification 5.4, Vol 3, Part C, Section 11, Figure 11.1: A
 <table>
 <tr>
   <th class="evva-th-1">Which Bits</th>
-  <th class="evva-th-1">Bit Length</th> 
-  <th class="evva-th-1">Value</th> 
+  <th class="evva-th-1">Bit Length</th>
+  <th class="evva-th-1">Value</th>
 </tr>
   <tr>
     <th class="evva-th-1">15-10</th>
@@ -197,7 +197,7 @@ It follows the Core Specification 5.4, Vol 3, Part C, Section 11, Figure 11.1: A
 
 ## Device types
 
-See also [Component Overview](/domain/components/component-overview/)
+See also [Component Overview](/domain/access-components/component-overview/)
 <table>
   <tr>
     <th class="evva-th-1">EVVA component</th>
@@ -206,30 +206,30 @@ See also [Component Overview](/domain/components/component-overview/)
     <th class="evva-th-1">Interface Version Values</th>
   </tr>
   <tr>
-    <th class="evva-th-1">[Handle](/domain/components/types/handle/)</th>
+    <th class="evva-th-1">[Handle](/domain/access-components/types/handle/)</th>
     <td>100 | 0x64 | d</td>
     <td>17|0x11</td>
     <td>2 | 000010</td>
   </tr>
   <tr>
-    <th class="evva-th-1">[Escutcheon](/domain/components/types/escutcheon/))</th>
+    <th class="evva-th-1">[Escutcheon](/domain/access-components/types/escutcheon/))</th>
     <td>98 | 0x62 | b</td>
     <td>17|0x11</td>
     <td>2 | 000010</td>
   </tr>
  <tr>
-    <th class="evva-th-1">[Cylinder](/domain/components/types/cylinder/)</th>
+    <th class="evva-th-1">[Cylinder](/domain/access-components/types/cylinder/)</th>
     <td>122 | 0x7A | z</td>
     <td>21|0x15</td>
     <td>0 | 000000</td>
  </tr>
  <tr>
-    <th class="evva-th-1">[Wallreader](/domain/components/types/wallreader/) reader unit</th>
+    <th class="evva-th-1">[Wallreader](/domain/access-components/types/wallreader/) reader unit</th>
     <td>119 | 0x77 | w</td>
     <td>27|0x1B</td>
     <td>1 | 000001</td>
   </tr>
 </table>
 
-## 
+##
 <Badge text="Specification" variant="note" /><Badge text="Mobile" variant="note" /><Badge text="BLE" variant="note" />

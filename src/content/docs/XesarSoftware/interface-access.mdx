@@ -1,0 +1,82 @@
+---
+title: Access to the Interface
+description: How to access the third party interface
+template: doc
+sidebar:
+    order: 3
+---
+
+import { Image } from 'astro:assets';
+import downloadFromUI from '../../../assets/xesarsw/mqtt-config-download.png';
+
+### General
+Access to the MQTT Broker in Xesar is established with a mutually authenticated TLS connection. For this a client key and certificate
+is required.
+
+:::danger[Warning]
+Please note that Each client requires a certificate for unique identification and authentication. You _cannot_
+connect two different clients or instances of your middleware with one and the same access certificate without.
+:::
+
+
+:::caution
+When you download or issue a new access configuration, an access token for the user session is already included
+and an existing access token for the same user will be automatically invalidated.
+:::
+
+The access rights corresponding to specific commands are bound to the user groups that the user that you are downloading for belongs to.
+The [API Documentation](/xesarsoftware/api) will always present the required rights for that specific action.
+So always look out for `Required permission` in the documentation.
+
+
+### Download via UI
+
+You can download the access configuration with the key and the certificate manually from a user.
+<Image src={downloadFromUI} alt="Download config from UI" format="png" loading="lazy" width="800"/>
+
+### Obtain via REST interface
+
+You can also obtain the certificates and authorization token through a REST API.
+
+The following example shows how to obtain the MQTT access configuration using `curl` and `jq` and
+can be easily implemented in any programming language that supports HTTP requests and JSON parsing.
+
+- Obtaining the authorization token: `POST /api/v1/login` with Body: `{ "name": "username", "password": "password" }`
+- Obtaining the MQTT access configuration: `GET /api/v1/user/mqtt-configuration` with the obtained token in the `Authorization` header.
+
+```bash
+# Using curl and jq - make sure you adjust the HOST, USERNAME and PASSWORD to your system
+
+HOST="example.com"
+USERNAME="foo"
+PASSWORD="bar"
+
+# Fetch an authorization token
+TOKEN=$(curl -X POST "https://${HOST}/api/v1/login" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"name\": \"${USERNAME}\", \"password\": \"${PASSWORD}\"}" | jq -r '.token')
+
+# Get the MQTT access configuration - this will return the MQTT broker address, port and authorization token as well as the certificate required to authenticate with the broker.
+curl -X GET "https://${HOST}/api/v1/user/mqtt-configuration" -H "accept: application/json" -H "Authorization: Bearer ${TOKEN}" | jq
+```
+
+The response will contain the following information:
+```json
+{
+  // The Base64 encoded (PEM) certificate, certificate authority and key
+  "ca": "string (base64)", // The certificate authority (PEM)
+  "cert": "string (base64)", // The certificate (PEM)
+  "key": "string (base64)", // The private key (PEM)
+  // The MQTT connection properties
+  "apiProperties": {
+    "userId": "string (uuid)", // The user ID
+    "brokerAddress": "string", // The broker address
+    "brokerPort": integer, // The broker port
+    "token": "string" // The publish authorization token
+  }
+}
+```
+
+:::note
+We have built `xs3-cert` as a tool to help with access in certain setups. Please refer to
+[xs3-cert-tool](/xesarsoftware/xs3-cert-tool) for more information.
+:::
+

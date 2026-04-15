@@ -29,9 +29,9 @@ may for example be an ERP or a booking system.
 
 # Understand the Mobile SDK
 
-Mobile Disengage with [EVVA components](/domain/components/component-overview/) (Xesar system) works over Bluetooth Low Energy and uses
+Mobile Disengage with [EVVA components](/domain/access-components/component-overview/) (Xesar system) works over Bluetooth Low Energy and uses
 1. the continuous [BLE Advertisement of EVVA components](/specifications/ble-advertisement/)
-1. the GATT standard based [Mobile Identification Medium Service](/specifications/ble-mobile-identification-medium/)
+2. the GATT standard based [Mobile Identification Medium Service](/specifications/ble-mobile-identification-medium-service)
 to provide authentication and authorization capabilities  equivalent to the standard [Identification Medium](/domain/concepts/identification-medium/) in a Xesar.
 
 ## Functionality covered by the SDK
@@ -48,7 +48,7 @@ to provide authentication and authorization capabilities  equivalent to the stan
 
 ## Responsibilities of the SDK
 
-The implementation in the SDK handles the BLE communication and the full [disengage sequence flow](/specifications/ble-mobile-disengage/) with the [EVVA Component](/domain/components/component-overview/).
+The implementation in the SDK handles the BLE communication and the full [disengage sequence flow](/specifications/ble-mobile-disengage/) with the [EVVA Component](/domain/access-components/component-overview).
 This includes the required cryptographical operations.
 
 The responsibility will be gradually be extended with support for features around provisioning and the handling of an [Identification Medium](/domain/concepts/identification-medium/)).
@@ -56,9 +56,9 @@ Therefore, the SDK already includes basic support for RFID as well as an MQTT cl
 
 ## Responsibilities of your mobile application
 
-1. push notifications 
-1. security for the application bootstrap and data storage (e.g. 2FA, keystore)
-1. communication with your own [Middleware](/mobilesdk/middleware-notes/) and/or backend.
+1. push notifications
+2. security for the application bootstrap and data storage (e.g. 2FA, keystore)
+3. communication with your own [Middleware](/mobilesdk/middleware-notes/) and/or backend.
 
 ## Supported Mobile Platforms
 - iOS (>=15)
