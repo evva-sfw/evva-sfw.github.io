@@ -2,6 +2,7 @@
 import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,26 +36,42 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Domain',
-          items: [{ autogenerate: { directory: 'Domain' } }],
+          items: [{
+            autogenerate: {directory: 'Domain'}
+          }],
         },
         {
           label: 'Mobile SDK',
-          items: [{ autogenerate: { directory: 'MobileSDK' } }],
+          items: [{
+            autogenerate: {directory: 'MobileSDK'}
+          }],
         },
         {
           label: 'Xesar Software',
-          items: [{ autogenerate: { directory: 'XesarSoftware' } }],
+          items: [{
+            autogenerate: {directory: 'XesarSoftware'}
+          }],
         },
         {
           label: 'Specifications',
-          items: [{ autogenerate: { directory: 'Specifications' } }],
+          items: [{
+            autogenerate: {directory: 'Specifications'}
+          }],
         },
         {
           label: 'Guides',
-          items: [{ autogenerate: { directory: 'Guides' } }],
+          items: [{
+            autogenerate: {directory: 'Guides'}
+          }],
         },
       ],
       plugins: [starlightLinksValidator()],
     }),
+    mdx({
+      gfm: true,
+    }),
   ],
+  markdown: {
+    gfm: true,
+  },
 });
