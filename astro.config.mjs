@@ -35,23 +35,23 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Domain',
-          autogenerate: {directory: 'Domain'},
+          items: [{ autogenerate: { directory: 'Domain' } }],
         },
         {
           label: 'Mobile SDK',
-          autogenerate: {directory: 'MobileSDK'},
+          items: [{ autogenerate: { directory: 'MobileSDK' } }],
         },
         {
           label: 'Xesar Software',
-          autogenerate: {directory: 'XesarSoftware'},
+          items: [{ autogenerate: { directory: 'XesarSoftware' } }],
         },
         {
           label: 'Specifications',
-          autogenerate: {directory: 'Specifications'},
+          items: [{ autogenerate: { directory: 'Specifications' } }],
         },
         {
           label: 'Guides',
-          autogenerate: {directory: 'Guides'},
+          items: [{ autogenerate: { directory: 'Guides' } }],
         },
       ],
       plugins: [starlightLinksValidator()],
