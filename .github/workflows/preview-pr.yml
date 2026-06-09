@@ -28,7 +28,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=developer.evva.link --branch=${{ github.head_ref }}
+          command: pages deploy dist --project-name=developer-evva-link --branch=${{ github.head_ref }}
 
       # wrangler-action automatically outputs the deployment URLs
       - name: Post Preview URL to PR
