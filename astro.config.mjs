@@ -3,6 +3,7 @@ import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLinksValidator from 'starlight-links-validator';
 import mdx from '@astrojs/mdx';
+import { unified } from '@astrojs/markdown-remark';
 
 // https://astro.build/config
 export default defineConfig({
@@ -67,11 +68,11 @@ export default defineConfig({
       ],
       plugins: [starlightLinksValidator()],
     }),
-    mdx({
-      gfm: true,
-    }),
+    mdx(),
   ],
   markdown: {
-    gfm: true,
+    processor: unified({
+      gfm: true,
+    }),
   },
 });
