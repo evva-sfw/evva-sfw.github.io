@@ -14,7 +14,7 @@ test('page has table', async ({ page }) => {
   await expect(table).toBeVisible();
 });
 
-test('landing page has 5 icons', async ({ page }) => {
+test('landing page has 5 icons with paths or groups', async ({ page }) => {
   await page.goto('http://localhost:4321/');
 
   const cards = page.locator('article.card');
@@ -24,7 +24,12 @@ test('landing page has 5 icons', async ({ page }) => {
   const cardCount = await cards.count();
   for (let i = 0; i < cardCount; i++) {
     const icon = cards.nth(i).locator('.title > svg');
+    await icon.scrollIntoViewIfNeeded();
     await expect(icon).toBeVisible();
+
+    // Looks for a <g> OR a <path> inside
+    const svgContent = icon.locator('g, path').first();
+    await expect(svgContent).toBeVisible();
   }
 });
 
