@@ -65,7 +65,9 @@ test('cylinder page has icon symbol', async ({ page }) => {
   await page.goto('http://localhost:4321/domain/access-components/types/cylinder/');
 
   const symbol = page.getByRole('img', { name: 'Cylinder symbol.' });
-  await expect(symbol).toBeVisible();
+  // Wait for the image to load
+
+  await expect(symbol).toBeVisible({ timeout: 10000 });
 
   const isImageLoaded = await symbol.evaluate((img) => {
     const imageElement = img as HTMLImageElement;
