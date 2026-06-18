@@ -3,15 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "postinstall": "patch-package",
     "build:patch": "patch-package",
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "npx playwright test"
   },
   "dependencies": {
+    "@astrojs/mdx": "^6.0.2",
     "@astrojs/starlight": "^0.39.3",
     "@fontsource/open-sans": "^5.2.7",
     "astro": "^6.4.4",
@@ -19,6 +20,7 @@
     "starlight-links-validator": "^0.23.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "patch-package": "^8.0.1"
   }
 }
